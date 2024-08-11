@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Visibility Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            margin-right: 10px;
+            display: none; /* Hide the input initially */
+        }
+        button {
+            padding: 5px 10px;
+            margin-right: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Text Visibility Control</h1>
+    
+    <button onclick="showInput()">Type Text</button>
+    <button onclick="revealText()">Reveal Text</button>
+    <button onclick="hideText()">Hide Text</button>
+
+    <input type="text" id="userText" placeholder="Type your text here...">
+    <p id="displayText">....... </p>
+
+    <script>
+        function showInput() {
+            document.getElementById("userText").style.display = "inline-block";
+            document.getElementById("userText").focus();
+        }
+
+        function revealText() {
+            const userText = document.getElementById("userText").value;
+            document.getElementById("displayText").textContent = userText ? userText : ".......";
+        }
+
+        function hideText() {
+            document.getElementById("displayText").textContent = ".......";
+        }
+    </script>
+
+</body>
+</html>
